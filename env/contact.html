@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Contact</title>
+    <script src="{{ url_for('static', filename='js/contact.js') }}" defer></script>
+
+  </head>
+  <body>
+
+		<form action="/submit" method="post" id="form">
+			<label for="firstname">Firstname:</label>
+			<input type="text" id="firstname" name="firstname" ><br>
+
+			<label for="lastname">Lastname:</label>
+			<input type="text" id="lastname" name="lastname"><br>
+
+			<label for="phone">Phonenumber:</label>
+			<input type="tel" id="phone" name="phone"><br>
+
+			<label for="email">E-Mail:</label>
+			<input type="email" id="email" name="email"><br>
+
+			<label for="message">Message:</label><br>
+			<textarea id="message" name="message" rows="4"></textarea><br>
+
+			<label for="captcha">Calculate: {{captcha}}</label>
+			<input type="number" id="captcha" name="captcha"><br>
+
+			<input type="number" id="solution" value="{{solution}}" hidden><br>
+			<input type="hidden" id="csrf" name="csrf_token">
+
+			<input type="submit" id="submitBtn" value="Absenden">
+		</form>
+
+		<h4 id="notification"></h4>
+
+
+  </body>
+</html>
